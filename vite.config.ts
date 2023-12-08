@@ -15,7 +15,19 @@ export default defineConfig({
     },
   },
   test: {
+   
     globals: true,
     environment: 'jsdom'
+  },
+  server: {
+    proxy: {
+      '/api': {
+      target: 'http://192.168.250.50:8069',
+      changeOrigin: true,
+      rewrite: (path) => path.replace(/^\/api/, ''),
+    },
+    }
+    
   }
+  
 })
