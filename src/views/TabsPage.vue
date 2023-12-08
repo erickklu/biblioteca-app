@@ -9,10 +9,6 @@
           <ion-label>Usuario</ion-label>
         </ion-tab-button>
 
-        <!-- <ion-tab-button tab="tab2">
-          <ion-icon aria-hidden="true" :icon="logOutOutline" />
-          <ion-label>Cerrar Sesion</ion-label>
-        </ion-tab-button> -->
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
@@ -20,11 +16,6 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { ellipse, square, triangle, qrCode, barcodeOutline, personOutline, logOutOutline } from 'ionicons/icons';
+import { personOutline } from 'ionicons/icons';
 
 </script>
-
-        <!-- <ion-tab-button tab="tab2" href="/tabs/tab2">
-          <ion-icon aria-hidden="true" :icon="qrCode" />
-          <ion-label>Código QR</ion-label>
-        </ion-tab-button> -->

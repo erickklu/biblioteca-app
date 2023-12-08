@@ -15,11 +15,9 @@
             </p>
 
             <ion-input placeholder="xxxxxxxxxx" v-model="cedula"></ion-input>
-            <ion-button  :disabled="cedula.length == 0" @click="obtenerDatos()" style="padding-top: 12px;">INGRESAR</ion-button>
-            <!-- <span v-text="user.apellidos"></span> -->
-
-
-
+            <ion-button :disabled="cedula.length == 0" @click="obtenerDatos()"
+              style="padding-top: 12px;">INGRESAR</ion-button>
+    
           </div>
         </ion-card-content>
       </ion-card>
@@ -28,25 +26,28 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonInput, IonButton, IonCard, IonCardContent, alertController } from '@ionic/vue';
+import { IonContent, IonPage, IonInput, IonButton, IonCard, IonCardContent, alertController } from '@ionic/vue';
 import { useRouter } from 'vue-router';
-import { Plugins } from '@capacitor/core';
+import { CapacitorHttp as Http } from '@capacitor/core';
 import { onMounted, ref } from 'vue';
-import { Http } from '@capacitor-community/http'
 import { Storage } from '@ionic/storage';
 
 const store = new Storage();
 
-
-
 onMounted(async () => {
   await store.create();
+  user.value = await store.get("dato")
+
+  if (user.value) {
+    MenuPrincipal()
+  }
 });
 
 const user = ref({
   apellidos: "",
   nombres: "",
-  cedula: ""
+  cedula: "",
+  image: ""
 })
 
 const cedula = ref("")
@@ -54,7 +55,7 @@ const cedula = ref("")
 async function obtenerDatos() {
 
   const options = {
-    url: "/api/banner/check-usuario",
+    url: "https://unitec.pucesd.edu.ec/banner/check-usuario",
     headers: {
       "Content-Type": "application/json"
     },
@@ -68,26 +69,18 @@ async function obtenerDatos() {
   const res = await Http.post(options)
 
   if (res.data.result.cedula == null) {
-    /* console.log('Dato no valido') */
-
     const alert = await alertController.create({
       header: 'Usuario no valido',
-      /* subHeader: 'A Sub Header Is Optional', */
-      /* message: 'a', */
       buttons: ['Aceptar'],
     });
 
     await alert.present();
-
 
   } else {
     store.set('dato', res.data.result)
     MenuPrincipal()
 
   }
-  /*   console.log(res.data.result.cedula)
-   */
-  user.value.apellidos = res.data.result.apellidos
 }
 
 
@@ -95,7 +88,6 @@ async function obtenerDatos() {
 const router = useRouter()
 
 function MenuPrincipal() {
-  console.log('tabsp')
   router.replace({ name: 'tabsp' })
 }
 
@@ -104,8 +96,5 @@ function MenuPrincipal() {
 <style scoped>
 ion-button {
   --background: #2A9EF9;
-  /* --background-hover: #9ce0be;
-  --background-activated: #88f4be;
-  --background-focused: #88f4be;  */
 }
 </style>
