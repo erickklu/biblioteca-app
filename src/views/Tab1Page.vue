@@ -29,11 +29,6 @@
               <ion-button @click="Login()">Cambiar de usuario</ion-button>
 
             </div>
-            <ion-fab @click="Info()" slot="fixed" vertical="bottom" horizontal="end">
-              <ion-fab-button size="small">
-                <ion-icon :icon="informationOutline"></ion-icon>
-              </ion-fab-button>
-            </ion-fab>
           </div>
         </ion-card-content>
       </ion-card>
@@ -42,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { IonContent, IonHeader, IonPage, IonCard, IonCardContent, IonButton, IonIcon, IonFab, IonFabButton } from '@ionic/vue';
+import { IonContent, IonHeader, IonPage, IonCard, IonCardContent, IonButton } from '@ionic/vue';
 import { informationOutline } from 'ionicons/icons';
 
 import { ref, onMounted } from 'vue';
@@ -77,7 +72,6 @@ async function Login() {
 
 async function Info() {
   router.push({ name: 'Info' })
-
 }
 
 </script>

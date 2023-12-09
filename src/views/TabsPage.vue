@@ -8,7 +8,12 @@
           <ion-icon aria-hidden="true" :icon="personOutline" />
           <ion-label>Usuario</ion-label>
         </ion-tab-button>
-
+        
+        <ion-tab-button @click="Info()" tab="tab2">
+          <ion-icon aria-hidden="true" :icon="informationOutline" />
+          <ion-label>Acerca de</ion-label>
+        </ion-tab-button>
+        
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
@@ -16,6 +21,13 @@
 
 <script setup lang="ts">
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { personOutline } from 'ionicons/icons';
+import { personOutline, informationOutline } from 'ionicons/icons';
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
+
+async function Info() {
+  router.push({ name: 'Info' })
+}
 
 </script>
