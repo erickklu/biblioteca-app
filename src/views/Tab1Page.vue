@@ -5,11 +5,11 @@
     <ion-content :fullscreen="true">
       <ion-card style="height: 98%;">
         <ion-card-content>
-          <div style="padding-left: 5%; padding-right: 5%; height: 820px;">
+          <div style="padding-left: 0%; padding-right: 0%; height: 820px;">
             <h1 style="color: black;">Datos de Usuario</h1>
             <div style="padding-top: 26%; text-align: center; justify-content: center;">
 
-              <ion-card>
+              <ion-card style="">
                 <ion-card-content>
                   <span v-text="user.apellidos"></span>
                   <hr>
@@ -19,13 +19,13 @@
                   <hr>
                 </ion-card-content>
               </ion-card>
-
-              <ion-card>
+              <img :src="`data:image/png;base64,${user.image}`" alt="" style="width: 100%;">
+              <!-- <ion-card>
                 <ion-card-content>
                   <img :src="`data:image/png;base64,${user.image}`" alt="" style="width: 100%;">
                 </ion-card-content>
               </ion-card>
-
+ -->
               <ion-button @click="Login()">Cambiar de usuario</ion-button>
 
             </div>

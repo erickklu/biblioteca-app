@@ -18,7 +18,7 @@
                         <ion-card>
                             <ion-card-content>
                                 <p>Version: 1.2.0</p>
-                                <p>Derrollado en DTI-PUCESD por Erick Trejo, Juan Triviño y Jonathan Moreno</p>
+                                <p>Desarrollado en DTI-PUCESD por Erick Trejo, Juan Triviño y Jonathan Moreno</p>
                             </ion-card-content>
                         </ion-card>
 
