@@ -3,7 +3,7 @@
     <ion-content>
       <ion-card style="height: 97%;">
         <ion-card-content class="ion-text-center" style="height: 100%;">
-          <div style="padding-left: 15px; padding-top: 15%; text-align: center;">
+          <div style="padding-top: 15%; text-align: center;">
 
             <img src="/pucesdlogo.png" alt="">
 
