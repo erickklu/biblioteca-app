@@ -3,29 +3,25 @@
     <ion-header>
     </ion-header>
     <ion-content :fullscreen="true">
-      <ion-card style="height: 98%;">
+      <ion-card style="height: 97%;">
         <ion-card-content>
-          <div style="padding-left: 0%; padding-right: 0%; height: 820px;">
+          <div style="padding-left: 0%; padding-right: 0%; height: 800px;">
             <h1 style="color: black;">Datos de Usuario</h1>
-            <div style="padding-top: 26%; text-align: center; justify-content: center;">
+            <div style="padding-top: 15%; text-align: center; justify-content: center;">
 
-              <ion-card style="">
+              <ion-card>
                 <ion-card-content>
-                  <span v-text="user.apellidos"></span>
+                  <h5 style="font-weight: bold;">APELLIDOS: </h5><span v-text="user.apellidos"></span>
                   <hr>
-                  <span v-text="user.nombres"></span>
+                  <h5 style="font-weight: bold;">NOMBRES: </h5><span v-text="user.nombres"></span>
                   <hr>
-                  <span v-text="user.cedula"></span>
+                  <h5 style="font-weight: bold;">CÉDULA: </h5><span v-text="user.cedula"></span>
                   <hr>
                 </ion-card-content>
               </ion-card>
+
               <img :src="`data:image/png;base64,${user.image}`" alt="" style="width: 100%;">
-              <!-- <ion-card>
-                <ion-card-content>
-                  <img :src="`data:image/png;base64,${user.image}`" alt="" style="width: 100%;">
-                </ion-card-content>
-              </ion-card>
- -->
+          
               <ion-button @click="Login()">Cambiar de usuario</ion-button>
 
             </div>
@@ -38,7 +34,6 @@
 
 <script setup lang="ts">
 import { IonContent, IonHeader, IonPage, IonCard, IonCardContent, IonButton } from '@ionic/vue';
-import { informationOutline } from 'ionicons/icons';
 
 import { ref, onMounted } from 'vue';
 import { Storage } from '@ionic/storage';
@@ -84,7 +79,7 @@ ion-button {
 ion-fab-button {
   --background: white;
   --color: rgb(79, 79, 79);
-
 }
+
 </style>
 

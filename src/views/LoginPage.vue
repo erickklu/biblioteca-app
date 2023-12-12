@@ -3,7 +3,6 @@
     <ion-content>
       <ion-card style="height: 97%;">
         <ion-card-content class="ion-text-center" style="height: 100%;">
-          <div style="padding-top: 15%; text-align: center;">
 
             <img src="/pucesdlogo.png" alt="">
 
@@ -17,8 +16,7 @@
             <ion-input placeholder="xxxxxxxxxx" v-model="cedula"></ion-input>
             <ion-button :disabled="cedula.length == 0" @click="obtenerDatos()"
               style="padding-top: 12px;">INGRESAR</ion-button>
-    
-          </div>
+         
         </ion-card-content>
       </ion-card>
     </ion-content>
@@ -82,7 +80,6 @@ async function obtenerDatos() {
 
   }
 }
-
 
 /* Cambio de vista */
 const router = useRouter()

@@ -17,8 +17,8 @@
 
                         <ion-card>
                             <ion-card-content>
-                                <p>Version: 1.2.0</p>
-                                <p>Desarrollado en DTI-PUCESD por Erick Trejo, Juan Triviño y Jonathan Moreno</p>
+                                <p>Versión: 1.3.0</p>
+                                <p>Desarrollado en DTI-PUCESD por Erick Trejo, John Triviño y Jonathan Moreno</p>
                             </ion-card-content>
                         </ion-card>
 
@@ -34,12 +34,10 @@
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonCard, IonCardContent, IonButtons, IonBackButton, IonFab, IonFabButton, IonIcon, IonButton } from '@ionic/vue';
 import { useRouter } from 'vue-router';
 
-
 const router = useRouter()
 
 async function Menu() {
     router.back()
-
 }
 
 </script>
